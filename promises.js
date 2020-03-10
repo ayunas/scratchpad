@@ -12,17 +12,22 @@ const promise  = new Promise( (res,rej) => {
     
 })
 
+async function isOne () {
+    try {   
+        const res = await promise;
+        console.log(res, 'classic function isOne');
+    } catch(err) {console.log(err, 'classic function isOne')}
+}
+isOne()
 
-// async function test() {
-//     try {   
-//         const res = await promise;
-//         console.log(res);
-//     } catch(err) {console.log(err)}
-    
-// }
-// test()
+promise.then(res => console.log(res, '.then res')).catch(err => console.log(err, '.then res'));
 
-// promise.then(res => console.log(res)).catch(err => console.log(err));
+(async () => {
+    try {
+        const res = await promise;
+        console.log(res, 'res async iife');
+    } catch(err) {console.log(err, 'res async iife')}
+})()
 
 console.log('after the promise');
 
