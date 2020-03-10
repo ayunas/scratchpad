@@ -31,3 +31,12 @@ promise.then(res => console.log(res, '.then res')).catch(err => console.log(err,
 
 console.log('after the promise');
 
+const promise2 = new Promise((res,rej) => {
+    setTimeout(() => res('resolved'),1000)
+})
+
+promise2.then(res => {console.log(res); return 'one more gain'}).then(res => {console.log(res); return 'two more gain..'}).then(res => console.log(res)).catch(err => console.log(err));
+
+
+
+
