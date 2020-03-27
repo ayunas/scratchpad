@@ -1,6 +1,6 @@
 import sys
 from getopt import getopt
-import regex
+# import regex
 
 def start_end_dates():
     start = None
@@ -8,12 +8,17 @@ def start_end_dates():
 
     argv = sys.argv[1:]  #filename is discarded
 
-    options,args = getopt(argv,"s:e:")
-    print(options)
-    start,end = options
-    start = start[1]
-    end = end[1]
-    print(start,end)
+    options,args = getopt(argv,"s:e:",["startdate=","enddate="])
+    for (opt,arg) in options:
+        if opt in ("-s","--startdate"):
+            start = arg
+        elif opt in ('-e','--enddate'):
+            end = arg
+
+    print('start date: ', start)
+    print('end date', end)
+    
+
 
 
 if __name__ == '__main__':
