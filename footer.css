@@ -1,0 +1,16 @@
+footer {
+    display : flex;
+    justify-content: center;
+    align-items : center;
+    padding : 2rem;
+    margin-top : 3rem;
+    border : 1px solid $gatsby-purple;
+    // opacity: .5;
+    background-color: $gatsby-purple;
+    color : white;
+    a {
+        margin : 0 1rem;
+        text-decoration: none;
+        color : white;
+    }
+}
