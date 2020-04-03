@@ -21,6 +21,9 @@ class Universe:
 u = Universe()
 print(u)
 
+y = u.get_universe()
+print(y)
+
 x = u.get_uni()
 print(x)
 
