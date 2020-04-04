@@ -40,7 +40,7 @@ class Adapter:
     
     def __repr__(self):
         return str(self.__dict__)
-    
+
 
 cycle = Motorcycle()
 truck = Truck()
