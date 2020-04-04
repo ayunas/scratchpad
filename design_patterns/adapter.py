@@ -2,8 +2,8 @@ class Motorcycle:
     def __init__(self):
         self.name = 'motorcycle'
 
-    def wheels(self):
-        return '2 wheeler'
+    def drive(self):
+        return 'driving on two wheels!'
     
     def __repr__(self):
         return str(self.__dict__)
@@ -12,8 +12,8 @@ class Car:
     def __init__(self):
         self.name = 'car'
     
-    def wheels(self):
-        return '4 wheeler'
+    def drive(self):
+        return 'driving on 4 wheels!'
     
     def __repr__(self):
         return str(self.__dict__)
@@ -22,8 +22,8 @@ class Truck:
     def __init__(self):
         self.name = 'truck'
     
-    def wheels(self):
-        return '8 wheeler'
+    def drive(self):
+        return 'driving on 8 wheels!'
 
     def __repr__(self):
         return str(self.__dict__)
@@ -45,12 +45,11 @@ class Adapter:
 cycle = Motorcycle()
 truck = Truck()
 
-car_two_wheels = Adapter(car,wheels=cycle.wheels)  #cant do Motorcycle.wheels because wheels is an instance method, not a class method
-print(car_two_wheels)
-print(car_two_wheels.wheels())
+car2 = Adapter(car,drive=cycle.drive)  #cant do Motorcycle.wheels because wheels is an instance method, not a class method
+print(car.name, car2.drive())
 
-cycle8 = Adapter(cycle,wheels=truck.wheels)
-print(cycle8.wheels())
+cycle8 = Adapter(cycle,drive=truck.drive)
+print(cycle.name, cycle8.drive())
 
 
 
