@@ -10,24 +10,19 @@ class Tire:
         return str(self.__dict__)
 
 
-ld = Tire('left-driver',25)
-rd = Tire('right-driver',35)
-lb = Tire('left-back',25)
-rb = Tire('right-back',10)
-
 class GasTank:
     def __init__(self,volume):
         self.tank_level = volume
     
     def drive(self,distance):
-        self.tank_level *= (distance / 500)
+        self.tank_level *= 1 - (distance / 500)
     
     def __repr__(self):
         return str(self.__dict__)
 
 class Car:
     def __init__(self):
-        self.tires = [ld,rd,lb,rb]
+        self.tires = [Tire('left-front',25),Tire('right-front',35),Tire('left-back',25),Tire('right-back',10)]
         self.gas_tank = GasTank(70)
     
     def drive(self,distance):

@@ -1,34 +1,34 @@
 #create a variable that stores a single instance
 #Generate an error, if the class has already been instantiated
 
-# class Universe:
-#     __solo_instance = None
+class Universe:
+    __solo_instance = None
 
-#     def __init__(self):
-#         if Universe.__solo_instance:
-#             raise Exception("There is Only 1 Universe in the whole wide Universe")
-#         Universe.__solo_instance = self
+    def __init__(self):
+        if Universe.__solo_instance:
+            raise Exception("There is Only 1 Universe in the whole wide Universe")
+        Universe.__solo_instance = self
     
-#     @classmethod
-#     def get_universe(cls):
-#         if cls.__solo_instance is None:
-#             Universe()
-#         return cls.__solo_instance
+    @classmethod
+    def get_universe(cls):
+        if cls.__solo_instance is None:
+            Universe()
+        return cls.__solo_instance
 
-#     @staticmethod
-#     def get_uni():
-#         if Universe.__solo_instance == None:
-#             Universe()
-#         return Universe.__solo_instance
+    @staticmethod
+    def get_uni():
+        if Universe.__solo_instance == None:
+            Universe()
+        return Universe.__solo_instance
 
-# u = Universe()
-# print(u)
+u = Universe()
+print(u)
 
-# y = u.get_universe()
-# print(y)
+y = u.get_universe()
+print(y)
 
-# x = u.get_uni()
-# print(x)
+x = u.get_uni()
+print(x)
 
 
 
