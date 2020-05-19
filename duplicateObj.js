@@ -13,7 +13,7 @@ function duplicateObject(original) {
     const title = original.metadata.title;
     copy.metadata.title = 'copy of ' + title;
 
-    return copy
+    return copy;
 }
 
 
@@ -22,7 +22,7 @@ const orig = {
     author : 'Dan Abramov',
     cells : [1,2,3,4,5],
     metadata : {title : 'Just Javascript', info : 'just javascript will be a very interesting course', comments : 'Love learning from the experts'}
-}
+};
 
 
 x  = duplicateObject(orig);
