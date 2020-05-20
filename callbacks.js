@@ -19,3 +19,7 @@ const subtract = (x,y) => x - y;
 const addinger = hof(divide,subtract,1,2);
 console.log(addinger(2,3));
 
+module.exports = {
+    add,multiply
+}
+
