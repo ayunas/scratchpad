@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Home({location}) {
+export default function Home(props) {
 
     React.useEffect(() => {
-    //  console.log("props in <Home/>", props);
-     const {state} = location;
+     console.log("props in <Home/>", props);
+     const {state} = props.location;
      console.log(state);   
     })
 

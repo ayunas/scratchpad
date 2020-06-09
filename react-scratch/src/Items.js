@@ -6,6 +6,7 @@ export default function Items(props) {
 
     React.useEffect(() => {
         console.log("num state variable: ", num);
+        console.log("props in <Items/>", props);
     })
 
     return (
@@ -14,11 +15,12 @@ export default function Items(props) {
                 These are the items
             </div>
             <Link to={{pathname : "/", state : {num} }}>Home</Link>
-            {props.items.map(item => {
+            {props.items.map( (item,i) => {
                 return (
                 <>
                     <div>{JSON.stringify(item)}</div>
                     <button onClick={() => setNum(num+1)}>increase</button>
+                    <button><Link to={`/detail/${i+1}`}>Item Detail</Link></button>
                 </>
                 )
             })}
