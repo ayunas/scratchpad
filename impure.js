@@ -61,3 +61,13 @@ function schoolSet(old,name) {
 }
 
 console.log(schoolSet(schoolName,"Harvard"));
+
+//=======================================================================
+
+function pickOne(nums) {
+    const random_index = Math.floor(Math.random()*nums.length);
+    return nums[random_index];
+}
+
+console.log(pickOne(nums));
+
