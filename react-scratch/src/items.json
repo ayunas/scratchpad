@@ -1,7 +1,11 @@
 [
-    {"product" : "macbook pro"},
-    {"product" : "macbook air"},
-    {"product" : "mac mini"},
-    {"product" : "iPhone"},
-    {"product" : "iMac"}
+    {"quantity" : 5, "product" : "macbook pro"},
+    {"quantity" : 5, "product" : "macbook air"},
+    {"quantity" : 5, "product" : "mac mini"},
+    {"quantity" : 5, "product" : "iPhone"},
+    {"quantity" : 5, "product" : "iMac"}
 ]
+
+
+
+

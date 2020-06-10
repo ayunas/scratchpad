@@ -16,6 +16,7 @@ import itemData from './items.json';
 function App(props) {
 
   const [items,setItems] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     setItems(itemData);
@@ -45,16 +46,16 @@ function App(props) {
       </Route>
 
       <Route exact path="/items">
-        <Items items={items} />
+        <Items items={items} setItems={setItems} cart={cart} setCart={setCart} />
       </Route>
 
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" render={() => <Home />}/>
       {/* <Route exact path="/">
         <Home/>
       </Route> */}
 
       <Route path="/shopping-cart">
-        <ShoppingCart/>
+        <ShoppingCart cart={cart} setCart={setCart} />
       </Route>
 
       <Route path={`/detail/:id`} component={Detail} />
