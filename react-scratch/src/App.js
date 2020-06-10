@@ -7,11 +7,7 @@ import Items from './Items';
 import ShoppingCart from './ShoppingCart';
 import Detail from './Detail';
 import Counter from './Counter';
-
-
 import itemData from './items.json';
-
-
 
 function App(props) {
 
@@ -21,13 +17,6 @@ function App(props) {
   useEffect(() => {
     setItems(itemData);
   },[])
-
-  useEffect(() => {
-    console.log("items in local state: ", items);
-    console.log("props in <App/>", props);
-  })
-
-
 
   return (
     <div className="App">
