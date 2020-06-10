@@ -1,8 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import SearchBar from './SearchBar';
+
 
 export default function Items(props) {
-    const {items, setItems,cart, setCart} = props;
+    const {items, setItems,cart, setCart,query,setQuery} = props;
+
+    React.useEffect(() => {
+        console.log("items in <Items/>", items);
+    })
+
 
     const buy = (i) => {
         console.log('attempting to purchase an item');
@@ -33,6 +40,7 @@ export default function Items(props) {
             <div>
                 These are the items
             </div>
+            <SearchBar query={query} setQuery={setQuery} />
             <Link to={{pathname : "/", state : 10 }}>Home</Link>
             {props.items.map( (item,i) => {
                 return (

@@ -11,12 +11,33 @@ import itemData from './items.json';
 
 function App(props) {
 
+  const [filteredItems, setFilteredItems] = useState([]);
   const [items,setItems] = useState([]);
   const [cart, setCart] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     setItems(itemData);
+    setFilteredItems(itemData);
   },[])
+
+  const searchFilter = () => {
+      console.log('query in <App/>', query);
+      //filter the items. keep all the items that .includes() the substring stored in query.
+      let itemsCopy = [...items]; //immutability - copy the full list of items every time.  prevent state updating issues when doing a filter and undoing it.
+      console.log('items copy in <App/>', itemsCopy);
+      itemsCopy = itemsCopy.filter(item => item.product.includes(query));
+      console.log("filtered items copy", itemsCopy);
+
+      if(itemsCopy.length) {
+          setFilteredItems(itemsCopy);
+      }
+  }
+
+  useEffect(() => {
+    searchFilter() //run the searchFilter every time the query changes
+    
+  },[query])
 
   return (
     <div className="App">
@@ -35,7 +56,9 @@ function App(props) {
       </Route>
 
       <Route exact path="/items">
-        <Items items={items} setItems={setItems} cart={cart} setCart={setCart} />
+      <>
+      <Items items={filteredItems} setItems={setItems} cart={cart} setCart={setCart} query={query} setQuery={setQuery} /> 
+      </>
       </Route>
 
       <Route exact path="/" render={() => <Home />}/>
