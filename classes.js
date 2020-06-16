@@ -19,9 +19,15 @@ function Foo() {
     return this;
 }
 
-const obj = Foo();
-console.log(obj);
+// const obj = Foo();
+// console.log(obj);
 
+class jsClass {
+    a = 'property a';
+}
+
+const js = new jsClass();
+console.log(typeof js);
 
 
 

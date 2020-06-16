@@ -33,25 +33,28 @@
 
 
 class Cat {
-    #hunger = 10; //#private variable
-
+    
     constructor() {
-        this.#hunger;
+        // this.#hunger;
+        // this.#hunger = 10;
     }
 
-    feed(qty) {
-        this.#hunger = this.#hunger - qty;
+    static hunger = 10; //static property, available to ALL instances
+
+    feed = (qty) => {
+        // this.#hunger = this.#hunger - qty;
+        console.log(this.hunger);
     }
 
     getHunger() { //public method
-        return this.#hunger;
+        return hunger;
     }
-
 }
 
 const kitten = new Cat();
 kitten.feed(3);
-console.log(kitten.hunger);
+console.log(kitten);
+
 
 
 

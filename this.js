@@ -18,9 +18,6 @@ fn();
 new fn()
 
 
-
-
-
 //2. implicit binding = (object)
 const obj = {
     key1 : 'val1',
