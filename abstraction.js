@@ -1,3 +1,14 @@
+//Abstract Class – Machine
+// 	-name
+// 	-work( )
+// 	-cost( )
+
+
+// Vehicle
+// 	Truck
+// 	Motorcycle
+// 	Snow mobile
+
 class HomoSapien {
 
     constructor() {

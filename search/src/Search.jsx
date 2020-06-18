@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 function Search(props) {
     const [query,setQuery] = React.useState(""); //controlled input
     const [filteredFurniture,setFilteredFurniture] = React.useState(props.furniture);
