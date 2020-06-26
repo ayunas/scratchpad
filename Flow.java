@@ -7,12 +7,14 @@ class Flow {
         Random rand = new Random();
         int zeroOneTwo = rand.nextInt(3);
         
-        try {ß
+        try {
             int num1 = rand.nextInt(50);
             System.out.println(num1 + " divided by " + zeroOneTwo + " is : " + num1 / zeroOneTwo);
         } catch(ArithmeticException ae) {
             System.out.println("You cannot divide a number by zero " + ae);
-        } catch(e)
+        } catch(Error e) {
+            throw new Error(e);
+        }
     }
 
     static void iffys() {
